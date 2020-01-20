@@ -1,0 +1,32 @@
+{% extends "login.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    {% for row in rows %}
+    <tr>
+        <td>{{ row.symbol }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.shares1 }}</td>
+        <td>{{ row.price1 }}</td>
+        <td>{{ row.total1 }}</td>
+    </tr>
+    {% endfor %}
+    {% for balance in balances %}
+    <tr>
+        <td>{{ balance.cash1 }}</td>
+        <td>{{ const }}</td>
+    </tr>
+    {% endfor %}
+    {% for overall in overalls %}
+    {% if overall.total1 != None %}
+    <tr>
+        <td>{{ overall.total1 }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+
+{% endblock %}
